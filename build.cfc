@@ -33,7 +33,7 @@ component accessors="true" {
 
         if ( !directoryExists( cftokensDir & 'syntect' ) ) {
             print.line( 'Cloning Syntect repo from GitHub...' ).toConsole();
-            command( '!git clone https://github.com/trishume/syntect.git ./syntect' ).inWorkingDirectory( cftokensDir ).run();
+            command( '!git clone --depth 1 --branch v4.7.1 https://github.com/trishume/syntect.git ./syntect' ).inWorkingDirectory( cftokensDir ).run();
         } else {
             print.line( 'Pulling Syntect repo from GitHub...' ).toConsole();
             command( '!git pull' ).inWorkingDirectory( cftokensDir & 'syntect' ).run();
